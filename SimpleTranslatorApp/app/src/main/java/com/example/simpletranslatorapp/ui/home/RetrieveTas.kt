@@ -1,5 +1,6 @@
 package com.example.simpletranslatorapp.ui.home
 
+import android.os.AsyncTask
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpStatus
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.HttpClient
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.HttpGet
@@ -9,8 +10,11 @@ import org.json.JSONObject
 import java.net.URLEncoder
 import java.util.Locale
 
-class RetrieveTas() {
+class RetrieveTas(){
 
+
+
+    //This function translates text from Polish to English
     fun translate(text: String): String? {
 
         var dstLanguage = Locale.ENGLISH
@@ -39,7 +43,6 @@ class RetrieveTas() {
     }
 
 
-
-    }
+}
 
 
