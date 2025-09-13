@@ -49,6 +49,9 @@ class RetrieveTas(){
             "tw" -> {
                 i = 10
             }
+            "us" -> {
+                i = 11
+            }
 
 
 
@@ -65,6 +68,7 @@ class RetrieveTas(){
             8-> Locale.CANADA.language
             9-> Locale.GERMAN.language
             10-> Locale.TAIWAN.language
+            11-> Locale.US.language
 
             else -> {
                 Locale.TRADITIONAL_CHINESE.language

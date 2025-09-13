@@ -1,10 +1,8 @@
 package com.example.simpletranslatorapp.ui.home
 
+//noinspection SuspiciousImport
 import android.R
 import android.annotation.SuppressLint
-import android.content.res.Configuration
-import android.content.res.Resources
-import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
 import android.os.StrictMode
@@ -22,7 +20,6 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -45,14 +42,10 @@ class HomeFragment : Fragment(){
     override fun onResume() {
         super.onResume()
 
-        val appLocales = AppCompatDelegate.getApplicationLocales()
-
-
         val systemLocales = LocaleList.getDefault()
 
         for (i in 0..<systemLocales.size()) {
             systemLocales.get(i)?.let {
-                Log.i("SEBA","${it.displayLanguage} (${it.displayCountry})")
             }
         }
                   spinnerSettings();
@@ -66,8 +59,6 @@ class HomeFragment : Fragment(){
                         after: Int
                     ) {
                     }
-
-
                     override fun onTextChanged(
                         s: CharSequence,
                         start: Int,
@@ -82,7 +73,7 @@ class HomeFragment : Fragment(){
 
 
                         //edittext input handling
-                        val otl: OnTouchListener = OnTouchListener { v, event ->
+                        val otl = OnTouchListener { v, event ->
                             val inType = englishEditText.inputType
                             englishEditText.inputType = InputType.TYPE_NULL
                             englishEditText.onTouchEvent(event)
@@ -97,22 +88,46 @@ class HomeFragment : Fragment(){
     }
     private fun spinnerSettings() {
         spinner = binding.spinner1!!
-        val options: Array<String> = arrayOf("English", "French")
-        val arrayAdapter = getActivity()?.let { ArrayAdapter<String>(it.getApplicationContext(), R.layout.simple_spinner_dropdown_item,options) }
-        spinner.setAdapter(arrayAdapter)
+        val options: Array<String> = arrayOf("English", "French","German","Italian", "Chinese", "British","Japanese", "Taiwanese","Canadian")
+        val arrayAdapter = activity?.let { ArrayAdapter(it.applicationContext, R.layout.simple_spinner_item,options) }
+        spinner.adapter = arrayAdapter
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                var selectedText = options[position]
+                val selectedText = options[position]
                 if(selectedText == "English"){
                     lc = Locale.ENGLISH
-                    Log.i("SEBA",lc.toString())
-
                 }
                 if(selectedText == "French"){
                     lc = Locale.FRENCH
-                    Log.i("SEBA",lc.toString())
                 }
+                if(selectedText == "German"){
+                    lc = Locale.GERMAN
+                }
+                if(selectedText == "Italian"){
+                    lc = Locale.ITALY
+                }
+
+                if(selectedText == "Chinese"){
+                    lc = Locale.CHINESE
+                }
+                if(selectedText == "British"){
+                    lc = Locale.UK
+                }
+                if(selectedText == "Japanese"){
+                    lc = Locale.JAPAN
+                }
+                if(selectedText == "Taiwanese"){
+                    lc = Locale.TAIWAN
+                }
+                if(selectedText ==  "Canadian"){
+                    lc = Locale.CANADA
+                }
+
+
+
+
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -122,7 +137,7 @@ class HomeFragment : Fragment(){
     }
 
     //adding text support
-    fun editingText(s: CharSequence, lc1: Locale){
+    fun editingText(s: CharSequence, lc: Locale){
 
         if (s.isNotEmpty())
         {
