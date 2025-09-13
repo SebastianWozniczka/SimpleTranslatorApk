@@ -5,21 +5,21 @@
     tools:context=".ui.home.HomeFragment"
      android:layout_height="match_parent" android:layout_width="match_parent">
 
+
     <TextView
         android:id="@+id/EnglishTextView"
         android:layout_width="212dp"
         android:layout_height="30dp"
         android:background="@drawable/edit_text_border"
+        android:textSize="18sp"
         app:autoSizeMinTextSize="30sp"
         app:circularflow_angles="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
-
-
+        app:layout_constraintVertical_bias="0.594" />
 
     <EditText
         android:id="@+id/EnglishEditText"
@@ -28,7 +28,6 @@
         android:layout_height="110dp"
         android:padding="5dp"
         android:layout_marginTop="188dp"
-        android:background="@drawable/frame"
         android:cursorVisible="false"
         android:inputType="textVisiblePassword|textNoSuggestions"
         android:textAlignment="viewStart"
@@ -65,11 +64,10 @@
         android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527">
-
+        app:layout_constraintVertical_bias="0.443">
 
 
     </Spinner>
