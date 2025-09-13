@@ -47,6 +47,15 @@ android {
 
 dependencies {
 
+
+  //  implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
+    //implementation("com.google.firebase:firebase-analytics")
+ //   implementation("com.google.firebase:firebase-auth")
+  //  implementation("com.google.firebase:firebase-firestore")
+  //  implementation("com.goggle.firebase:firebase-ml-vision:15.0.0")
+   // implementation("com.google.code.gson:gson:2.8.9")
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
