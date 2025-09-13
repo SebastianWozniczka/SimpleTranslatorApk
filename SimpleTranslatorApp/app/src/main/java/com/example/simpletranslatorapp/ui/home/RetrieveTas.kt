@@ -22,11 +22,14 @@ class RetrieveTas(){
             "pl" -> {
                 i = 1
             }
-            "ch" -> {
+            "cn" -> {
                 i = 2
             }
             "it" -> {
                 i = 3
+            }
+            "gb" -> {
+                i = 4
             }
             "en" -> {
                 i = 5
@@ -34,16 +37,38 @@ class RetrieveTas(){
             "fr" -> {
                 i = 6
             }
+            "jp" -> {
+                i = 7
+            }
+            "ca" -> {
+                i = 8
+            }
+            "de" -> {
+                i = 9
+            }
+            "tw" -> {
+                i = 10
+            }
+
+
+
         }
         val currentLanguage = when(i) {
 
             1 -> Locale.getDefault().language
             2 -> Locale.CHINESE.language
             3 -> Locale.ITALY.language
+            4 -> Locale.UK.language
             5-> Locale.ENGLISH.language
             6-> Locale.FRENCH.language
+            7-> Locale.JAPAN.language
+            8-> Locale.CANADA.language
+            9-> Locale.GERMAN.language
+            10-> Locale.TAIWAN.language
 
-            else -> Locale.JAPAN.language
+            else -> {
+                Locale.TRADITIONAL_CHINESE.language
+            }
         }
 
         val dstLanguage = lc
